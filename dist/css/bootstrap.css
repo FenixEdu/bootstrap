@@ -4913,70 +4913,14 @@ ol ol {
   margin-bottom: 0;
   margin-left: 18px;
 }
-ul {
-  position: relative;
-  list-style: none;
-}
-ul li:before {
-  position: relative;
-  display: inline-block;
-  font-family: "fenixedu-icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-align: center;
-  text-decoration: inherit;
-  text-transform: none;
-  content: "\e933";
-
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed
-margin-left: .2em;*/
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
-ul li:before {
-  position: relative;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed
-margin-left: .2em;*/
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-  position: absolute;
-  display: inline-block;
-  margin: 5px -15px;
-  font-family: "fenixedu-icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  color: #bbb;
-  text-align: center;
-  text-decoration: inherit;
-  text-transform: none;
-
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .list-unstyled {
   padding-left: 0;
   list-style: none;
-}
-.list-unstyled li:before {
-  content: '';
 }
 .list-inline {
   padding-left: 0;
   margin-left: -5px;
   list-style: none;
-}
-.list-inline li:before {
-  content: '';
 }
 .list-inline > li {
   display: inline-block;
