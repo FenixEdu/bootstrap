@@ -11,7 +11,7 @@
     <groupId>org.fenixedu</groupId>
     <artifactId>fenixedu-canvas</artifactId>
     <name>FenixEdu Canvas</name>
-    <version>1.0.5</version>
+    <version>1.0.6-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for FenixEdu Canvas</description>
     <url>http://fenixedu.org</url>
