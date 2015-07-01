@@ -1,7 +1,8 @@
 /*!
- * Bootstrap v3.2.0 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * FenixEdu Canvas v1.0.5fc (http://fenixedu.org)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Copyright 2014-2015 Instituto Superior Técnico
+ * Licensed under MIT (https://github.com/FenixEdu/fenixedu-canvas/blob/master/LICENSE)
  */
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -5738,7 +5739,7 @@ th {
   width: 100%;
   max-width: 100%;
   margin-bottom: 21px;
-  table-layout: fixed;
+  table-layout: initial;
   /*// Remove top border from thead by default
   > caption + thead,
   > colgroup + thead,
@@ -10711,7 +10712,6 @@ body.dragover:after {
   font-size: 58.5px !important;
 }
 .alert-floating {
-  position: relative;
   max-width: 500px;
   padding-left: 62px;
   cursor: pointer;
@@ -10746,276 +10746,251 @@ body.dragover:after {
 .alert-floating.alert-dismissible:hover .close {
   visibility: visible;
 }
-.navbar.navbar-fenixedu {
+.navbar.navbar-general {
+  position: relative;
   min-height: 60px;
 }
-.navbar.navbar-fenixedu .scroller {
-  display: none;
-  float: right;
-  padding: 19.5px 0;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.navbar.navbar-fenixedu .scroller.scroller-left {
-  float: left;
-}
-.navbar.navbar-fenixedu .scroller > i:before {
-  color: #888;
-}
-.navbar.navbar-fenixedu .wrapper {
-  position: relative;
-  height: 62px;
-  margin: 0 auto;
-  overflow: hidden;
-  text-overflow: clip;
-  white-space: nowrap;
-}
-.navbar.navbar-fenixedu .wrapper:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 45px;
-  height: 100%;
-  pointer-events: none;
-  content: "";
-  background-image: -webkit-linear-gradient(left, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  background-image:      -o-linear-gradient(left, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #fff), color-stop(75%, rgba(255, 255, 255, 0)));
-  background-image:         linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#00ffffff', GradientType=1);
-  background-repeat: repeat-x;
-}
-.navbar.navbar-fenixedu .wrapper:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  width: 45px;
-  height: 100%;
-  pointer-events: none;
-  content: "";
-  background-image: -webkit-linear-gradient(right, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  background-image:      -o-linear-gradient(right, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(10%, #fff), color-stop(75%, rgba(255, 255, 255, 0)));
-  background-image:         linear-gradient(to left, #fff 10%, rgba(255, 255, 255, 0) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffffff', GradientType=1);
-  background-repeat: repeat-x;
-}
-.navbar.navbar-fenixedu .wrapper:before {
-  top: -1px;
-}
-.navbar.navbar-fenixedu .wrapper:after {
-  top: -1px;
-}
-.navbar.navbar-fenixedu .wrapper .navbar-nav {
-  position: absolute;
-  left: 0;
-  min-width: 3000px;
-  margin-left: 15px;
-}
-.navbar.navbar-fenixedu .wrapper .navbar-nav li a {
-  padding: 19.5px 40px;
-}
-.navbar.navbar-fenixedu .navbar-nav li.active > a:before {
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  display: block;
-  content: '';
-  border-color: transparent transparent #ddd transparent;
-  border-style: solid;
-  border-width: 0 9px 9px 9px;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-       -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-.navbar.navbar-fenixedu .navbar-nav li.active > a:after {
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  display: block;
-  content: '';
-  border-color: transparent transparent #f3f3f3 transparent;
-  border-style: solid;
-  border-width: 0 8px 8px 8px;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-       -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-.navbar.navbar-fenixedu .submenu {
-  margin-top: -1px;
-  background-color: #f3f3f3;
-  border-top: 1px solid #ddd;
-}
-.navbar.navbar-fenixedu .submenu .navbar {
-  width: 100%;
-  height: 40.5px;
-  min-height: 40.5px;
-  margin-bottom: 0;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav {
-  float: none;
-  width: 100%;
-  text-align: center;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav li {
-  display: inline-block;
-  float: none;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav li a {
-  padding: 9.75px 30px;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav li.active > a:before {
-  bottom: 0;
-  display: block;
-  border-color: transparent transparent #ddd transparent;
-  border-style: solid;
-  border-width: 0 7px 7px 7px;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav li.active > a:after {
-  bottom: 0;
-  display: block;
-  border-color: transparent transparent #fff transparent;
-  border-style: solid;
-  border-width: 0 6px 6px 6px;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav li:last-child:empty {
-  display: inline-block;
-  width: 100%;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav.collapse {
-  display: none;
-}
-.navbar.navbar-fenixedu .submenu .navbar .navbar-nav.collapse.in {
-  display: inline-block;
-}
-.navbar.navbar-fenixedu .navbar-nav .navbar-brand:before {
-  position: relative;
-  display: inline-block;
-  font-family: "fenixedu-icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-align: center;
-  text-decoration: inherit;
-  text-transform: none;
-  content: "\e8f6";
-
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed
-margin-left: .2em;*/
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
-.navbar.navbar-fenixedu .navbar-nav .navbar-brand:before {
-  position: relative;
-  display: inline-block;
-  float: left;
-  margin: 1px 7.5px;
-  font-family: "fenixedu-icons";
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed
-margin-left: .2em;*/
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-  font-size: 19px;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-align: center;
-  text-decoration: inherit;
-  text-transform: none;
-
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.navbar.navbar-fenixedu .navbar-nav .avatar {
+.navbar.navbar-general .navbar-nav#navbar-main > li {
   height: 60px;
 }
-.navbar.navbar-fenixedu .navbar-nav .avatar img {
-  float: right;
-  width: 30px;
-  height: auto;
-  margin-top: -4px;
-  border-radius: 2px;
+.navbar.navbar-general .navbar-nav#navbar-main > li > a {
+  padding: 19.5px 40px;
 }
-.navbar.navbar-fenixedu .navbar-nav .navbar-icon {
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"] {
+  position: absolute;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"]#navbar-brand {
+  left: 40px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"]#navbar-brand a {
+  color: #444;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"]#navbar-help {
+  right: 125px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"]#navbar-choser {
+  right: 90px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li[id*="navbar-"]#navbar-userarea {
+  right: 40px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li .avatar {
   display: inline-block;
   padding: 19.5px 10px !important;
 }
-.navbar.navbar-fenixedu .navbar-nav .navbar-icon .icon {
+.navbar.navbar-general .navbar-nav#navbar-main > li .avatar img {
+  width: 30px;
+  height: auto;
+  margin-top: -5px;
+  border-radius: 2px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li.dropdown .dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  right: 6px;
+  display: block;
+  content: '';
+  border-color: transparent transparent #ddd transparent;
+  border-style: solid;
+  border-width: 0 7px 7px 7px;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+       -o-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li.dropdown .dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  right: 8px;
+  display: block;
+  content: '';
+  border-color: transparent transparent #fff transparent;
+  border-style: solid;
+  border-width: 0 6px 6px 6px;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+       -o-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li .navbar-icon {
+  display: inline-block;
+  padding: 19.5px 10px !important;
+}
+.navbar.navbar-general .navbar-nav#navbar-main > li .navbar-icon .icon {
   float: left;
   margin-top: -2px;
   font-size: 23px;
   color: #bbb;
 }
-.navbar.navbar-fenixedu .navbar-nav .navbar-divider {
+.navbar.navbar-general .navbar-nav#navbar-main > li .navbar-icon:hover,
+.navbar.navbar-general .navbar-nav#navbar-main > li .navbar-icon:focus {
+  text-decoration: none;
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav {
+  width: 100%;
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li {
+  position: relative;
+  height: 60px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li > a {
+  padding: 19.5px 30px;
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li + li:before {
+  content: "\e89a";
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li + li:before {
+  position: relative;
+  position: absolute;
+  top: 23px;
+  display: inline-block;
+  font-family: "fenixedu-icons";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed
+margin-left: .2em;*/
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  color: #bbb;
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none;
+
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li .navbar-divider {
   height: 60px;
   padding: 17.5px 5px;
 }
-.navbar.navbar-fenixedu .navbar-nav .navbar-divider:after {
+.navbar.navbar-general .navbar-nav#navbar-main + .navbar-nav > li .navbar-divider:after {
   display: block;
   height: 100%;
   content: "";
   border-left: 1px solid #ddd;
 }
-.navbar.navbar-fenixedu .navbar-nav #navbar-help {
-  position: absolute;
-  right: 85px;
+.navbar.navbar-general .submenu {
+  background-color: #f3f3f3;
+  border-top: 1px solid #ddd;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown {
-  position: absolute;
+.navbar.navbar-general .submenu .navbar {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown .dropdown-menu:before {
+.navbar.navbar-general .submenu .navbar:before {
   position: absolute;
-  top: -7px;
-  left: 25%;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 25%;
+  height: 75px;
+  content: "";
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 10%, #f3f3f3 75%);
+  background-image:      -o-linear-gradient(top, rgba(255, 255, 255, 0) 10%, #f3f3f3 75%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgba(255, 255, 255, 0)), color-stop(75%, #f3f3f3));
+  background-image:         linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #f3f3f3 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#fff3f3f3', GradientType=0);
+  background-repeat: repeat-x;
+}
+.navbar.navbar-general .submenu .navbar > a {
+  position: absolute;
+  bottom: 9.75px;
+  z-index: 999;
+  width: 25%;
+  text-align: center;
+}
+.navbar.navbar-general .submenu .navbar > a > i:before {
+  font-size: 15px;
+  color: #bbb;
+}
+.navbar.navbar-general .submenu .navbar .navbar-nav {
+  position: relative;
+  max-height: 300px;
+  padding: 9.75px 0;
+  overflow: hidden;
+  overflow-x: hidden!important;
+  text-overflow: clip;
+  white-space: nowrap;
+  white-space: normal;
+}
+.navbar.navbar-general .submenu .navbar .navbar-nav:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
   display: block;
-  content: '';
-  border-color: transparent transparent #ddd transparent;
-  border-style: solid;
-  border-width: 0 7px 7px 7px;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-       -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  width: 45px;
+  height: 100%;
+  pointer-events: none;
+  content: "";
+  background-image: -webkit-linear-gradient(right, #f3f3f3 10%, rgba(255, 255, 255, 0) 75%);
+  background-image:      -o-linear-gradient(right, #f3f3f3 10%, rgba(255, 255, 255, 0) 75%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(10%, #f3f3f3), color-stop(75%, rgba(255, 255, 255, 0)));
+  background-image:         linear-gradient(to left, #f3f3f3 10%, rgba(255, 255, 255, 0) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#fff3f3f3', GradientType=1);
+  background-repeat: repeat-x;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown .dropdown-menu:after {
-  position: absolute;
-  top: -6px;
-  left: 25%;
-  display: block;
-  content: '';
-  border-color: transparent transparent #fff transparent;
-  border-style: solid;
-  border-width: 0 6px 6px 6px;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-       -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+.navbar.navbar-general .submenu .navbar .navbar-nav > li {
+  display: inline-block;
+  float: none;
+  width: 100%;
+
+  -webkit-column-break-before: always;
+  -webkit-break-before: column;
+     -moz-break-before: column;
+          break-before: column;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown:first-of-type {
-  left: 40px;
+.navbar.navbar-general .submenu .navbar .navbar-nav > li > a {
+  padding: 9.75px 30px;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown:last-of-type {
-  right: 40px;
+.navbar.navbar-general .submenu .navbar .navbar-nav:first-of-type {
+  max-width: 25%;
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown:last-of-type .dropdown-menu:before {
-  right: 25%;
-  left: auto;
+.navbar.navbar-general .submenu .navbar .navbar-nav:first-of-type > .active > a:before {
+  content: "\e89a";
 }
-.navbar.navbar-fenixedu .navbar-nav .dropdown:last-of-type .dropdown-menu:after {
-  right: 25%;
-  left: auto;
+.navbar.navbar-general .submenu .navbar .navbar-nav:first-of-type > .active > a:before {
+  position: relative;
+  top: 7.8px;
+  display: inline-block;
+  float: right;
+  font-family: "fenixedu-icons";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed
+margin-left: .2em;*/
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  color: #bbb;
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none;
+
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.navbar.navbar-general .submenu .navbar .navbar-nav:last-of-type {
+  max-width: 75%;
+
+  -webkit-columns: 284.5px auto;
+     -moz-columns: 284.5px auto;
+          columns: 284.5px auto;
+     -moz-column-fill: auto;
+  -webkit-column-fill: auto;
+          column-fill: auto;
+  -webkit-column-gap: 0;
+     -moz-column-gap: 0;
+          column-gap: 0;
 }
 /*# sourceMappingURL=bootstrap.css.map */

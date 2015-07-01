@@ -1,7 +1,8 @@
 /*!
- * Bootstrap v3.2.0 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * FenixEdu Canvas v1.0.5fc (http://fenixedu.org)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Copyright 2014-2015 Instituto Superior Técnico
+ * Licensed under MIT (https://github.com/FenixEdu/fenixedu-canvas/blob/master/LICENSE)
  */
 
 if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript requires jQuery') }
