@@ -73,6 +73,7 @@
 		top: 0;
 		left: 0;
 		z-index: 999;
+		display: block;
 	}
 }
 
@@ -90,6 +91,7 @@
 		top: 0;
 		right: 0;
 		z-index: 999;
+		display: block;
 	}
 }
 
@@ -142,8 +144,7 @@ body.dragover {
 	padding-left: (50 + @alert-padding);
 	cursor: pointer;
 	max-width: 500px;
-  position:relative;
-  
+
 	.icon {
 		width: 50px;
 		position: absolute;
@@ -184,203 +185,185 @@ body.dragover {
 // Custom FenixEdu Navbar
 // -------------------------
 
-.navbar.navbar-fenixedu {
+.navbar.navbar-general {
 	min-height: @navbar-height;
+	position: relative;
 
-  // Arrow scroller
+  // Brand and side dropdowns specific
 
-  .scroller {
-  	display: none;
-  	cursor: pointer;
-  	padding: @navbar-padding-vertical 0;
-  	text-align: center;
-  	white-space: nowrap;
-  	float: right;
+  .navbar-nav {
 
-  	&.scroller-left {float: left;}
+  	&#navbar-main {
+  		> li {
+  			height: @navbar-height;
+  			> a {padding: @navbar-padding-vertical (@navbar-padding-horizontal * 4);}
 
-  	> i:before {
-  		color: @gray-dark;
-  	}
-  }
+  			&[id*="navbar-"] {
+	  			position: absolute;
+	  			&#navbar-brand {left: 40px; a {color: @gray-darker;}}
+	  			&#navbar-help {right: 125px;}
+	  			&#navbar-choser {right: 90px;}
+	  			&#navbar-userarea {right: 40px;}
+	  		}
 
-  // First level menu specific
+	  		.avatar {
+	  			display: inline-block;
+	  			padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
+	  			img {
+	  				width: (@navbar-height / 2);
+	  				height: auto;
+	  				border-radius: @border-radius-base;
+	  				margin-top: -5px;
+	  			}
+	  		}
 
-  .wrapper {
-  	margin: 0 auto;
-  	height: (@navbar-height + 2);
-  	.corner-gradient-left;
-  	.corner-gradient-right;
+	  		&.dropdown {
+	  			.dropdown-menu {
+	  				&:before {
+	  					content: '';
+	  					position: absolute;
+	  					top: -7px;
+	  					right: 6px;
+	  					.triangle-up(7px, @gray-light);
+	  					.translate(-50%, 0);
+	  				}
+	  				&:after {
+	  					content: '';
+	  					position: absolute;
+	  					top: -6px;
+	  					right: 8px;
+	  					.triangle-up(6px, #fff);
+	  					.translate(-50%, 0);
+	  				}
+	  			}
+	  		}
 
-  	&:before {top: -1px;}
-  	&:after {top: -1px;}
+	  		.navbar-icon {
+	  			display: inline-block;
+	  			padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
+	  			.icon {
+	  				color: @gray;
+	  				font-size: 23px;
+	  				float: left;
+	  				margin-top: -2px;
+	  			}
 
-  	.navbar-nav {
-  		position: absolute;
-  		left: 0px;
-  		min-width: 3000px;
-  		margin-left: 15px;
-
-  		li {
-  			a {
-  				padding: @navbar-padding-vertical (@navbar-padding-horizontal * 4);
-  			}
+	  			&:hover, &:focus {text-decoration: none;}
+	  		}
   		}
-  	}
-  }
 
-  .navbar-nav li.active > a {
-  	&:before {
-  		content: '';
-  		.triangle-up(9px, @gray-light);
-  		position: absolute;
-  		bottom: -2px;
-  		left: 50%;
-  		.translate(-50%, 0);
-  	}
+  		+ .navbar-nav {
+	  		width: 100%;
 
-  	&:after {
-  		content: '';
-  		.triangle-up(8px, @gray-lighter);
-  		position: absolute;
-  		bottom: -2px;
-  		left: 50%;
-  		.translate(-50%, 0);
+	  		> li {
+	  			position: relative;
+	  			height: @navbar-height;
+	  			> a {padding: @navbar-padding-vertical (@navbar-padding-horizontal * 3);}
+
+	  			+ li {
+	  				.icon-right-open-big;
+	  				&:before {
+	  					.icon;
+	  					color: @gray;
+	  					position: absolute;
+	  					top: ((@navbar-height / 2) - (@line-height-computed / 3));
+	  					font-size: @font-size-small;
+	  				}
+	  			}
+
+		  		.navbar-divider {
+		  			height: @navbar-height;
+		  			padding: (@navbar-padding-vertical - 2) (@navbar-padding-horizontal / 2);
+
+		  			&:after {
+		  				content: "";
+		  				border-left: 1px solid @gray-light;
+		  				height: 100%;
+		  				display: block;
+		  			}
+		  		}
+	  		}
+	  	}
   	}
-  }
+}
 
   // Second level menu specific
 
   .submenu {
   	background-color: @gray-lighter;
   	border-top: 1px solid @gray-light;
-  	margin-top: -1px;
 
   	.navbar {
   		width: 100%;
   		margin-bottom: 0;
-  		min-height: (@navbar-padding-vertical + @line-height-computed);
-  		height: (@navbar-padding-vertical + @line-height-computed);
+  		position: relative;
 
-  		.navbar-nav {
-  			text-align: center;
-  			width: 100%;
-  			float: none;
-  			li {
-  				display: inline-block;
-  				float: none;
-
-  				a {padding: (@navbar-padding-vertical / 2) (@navbar-padding-horizontal * 3);}
-
-  				&.active > a {
-  					&:before {
-  						.triangle-up(7px, @gray-light);
-  						bottom: 0;
-  					}
-  					&:after {
-  						.triangle-up(6px, #fff);
-  						bottom: 0;
-  					}
-  				}
-  				&:last-child:empty {
-  					display: inline-block;
-  					width: 100%;
-  				}
-  			}
-  			&.collapse {display: none;}
-  			&.collapse.in {display: inline-block;}
-  		}
-  	}
-  }
-
-  // Brand and side dropdowns specific
-
-  .navbar-nav {
-  	.navbar-brand {
-  		.icon-layout();
   		&:before {
-  			.icon();
-  			font-size: @font-size-large;
-  			float: left;
-  			margin: 1px 7.5px;
-  		}
-  	}
-
-  	.avatar {
-  		height: @navbar-height;
-  		img {
-  			width: (@navbar-height / 2);
-	  		height: auto;
-	  		border-radius: @border-radius-base;
-	  		float: right;
-	  		margin-top: -4px;
-  		}
-  	}
-
-  	.navbar-icon {
-  		display: inline-block;
-  		padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
-  		.icon {
-  			color: @gray;
-  			font-size: 23px;
-  			float: left; 
-  			margin-top: -2px;
-  		}
-  	}
-
-  	.navbar-divider {
-  		height: @navbar-height;
-  		padding: (@navbar-padding-vertical - 2) (@navbar-padding-horizontal / 2);
-
-  		&:after {
   			content: "";
-  			border-left: 1px solid @gray-light;
-  			height: 100%;
-  			display: block;
-  		}
-  	}
-
-  	#navbar-help {
-  		position: absolute;
-  		right: 85px;
-  	}
-
-  	.dropdown {
-  		position: absolute;
-
-  		.dropdown-menu {
-  			&:before {
-  				content: '';
-  				position: absolute;
-  				top: -7px;
-  				left: 25%;
-  				.triangle-up(7px, @gray-light);
-  				.translate(-50%, 0);
-  			}
-  			&:after {
-  				content: '';
-  				position: absolute;
-  				top: -6px;
-  				left: 25%;
-  				.triangle-up(6px, #fff);
-  				.translate(-50%, 0);
-  			}
+  			width: 25%;
+  			height: 75px;
+  			#gradient.vertical(rgba(255, 255, 255, 0), @gray-lighter, 10%, 75%);
+  			position: absolute;
+  			bottom: 0;
+  			left: 0;
+  			z-index: 999;
   		}
 
-  		&:first-of-type {left: 40px;}
+  		> a {
+  			position: absolute;
+  			bottom: (@navbar-padding-vertical / 2);
+  			text-align: center;
+  			z-index: 999;
+  			width: 25%;
 
-  		&:last-of-type {
-  			right: 40px;
+  			> i:before {
+  				color: @gray;
+  				font-size: @font-size-small;
+  			}
+  		}
+ 
+  		.navbar-nav {
+  			.corner-gradient-right(rgba(243, 243, 243, 1));
+  			white-space: normal;
+  			padding: (@navbar-padding-vertical / 2) 0;
+  			max-height: (@navbar-height * 5);
+  			overflow-x: hidden!important;
 
-  			.dropdown-menu {
-  				&:before {
-  					right: 25%;
-  					left: auto;
+  			> li {
+  				width: 100%;
+  				float: none;
+  				display: inline-block;
+  				-webkit-column-break-before: always;
+				break-before: column; 
+
+  				> a {
+  					padding: (@navbar-padding-vertical / 2) (@navbar-padding-horizontal * 3);
   				}
-  				&:after {
-  					right: 25%;
-  					left: auto;
+  			}
+
+  			&:first-of-type {
+  				max-width: 25%;
+
+  				> .active > a {
+  					.icon-right-open-big;
+	  				&:before {
+	  					.icon;
+	  					color: @gray;
+	  					top: (@navbar-padding-vertical / 2.5);
+	  					font-size: @font-size-small;
+	  					float: right;
+	  				}
   				}
+  			}
+
+  			&:last-of-type {
+  				max-width: 75%;
+  				-webkit-columns: 284.5px auto;
+  				-moz-columns: 284.5px auto;
+  				columns: 284.5px auto;
+  				-moz-column-fill: auto;
+  				column-fill: auto;
+  				column-gap: 0;
   			}
   		}
   	}
