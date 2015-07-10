@@ -155,7 +155,7 @@ body.dragover-err {
 // -------------------------
 
 .alert-floating {
-	padding-left: (50 + @alert-padding);
+	padding-left: (50px + @alert-padding);
 	cursor: pointer;
 	max-width: 500px;
 
@@ -203,26 +203,82 @@ body.dragover-err {
 	min-height: @navbar-height;
 	position: relative;
 
-  // Brand and side dropdowns specific
+	.navbar-nav {
+		> li {
+			position: relative;
+			height: @navbar-height;
+			> a {padding: @navbar-padding-vertical (@navbar-padding-horizontal * 3);}
+		}
+	}
 
-  .navbar-nav {
+  	.navbar-divider {
+  		display: inline-block;
+  		height: @navbar-height;
+  		padding: (@navbar-padding-vertical - 2) (@navbar-padding-horizontal / 2);
 
-  	&#navbar-main {
+  		&:after {
+  			content: "";
+  			border-left: 1px solid @gray-light;
+  			height: 100%;
+  			display: block;
+  		}
+  	}
+
+  	.navbar-icon {
+  		display: inline-block;
+  		padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
+  		background-color: transparent;
+  		border: none;
+  		float: left;
+  		
+  		.icon {
+  			color: @gray;
+  			font-size: 22px; //fix to 23px after updating the icon font
+  			float: left;
+  			margin-top: -2px;
+  		}
+  		&:hover, &:focus {text-decoration: none;}
+  	}
+
+
+  	// Brand and side dropdowns specific
+
+  	#navbar-floating-items {
   		> li {
-  			height: @navbar-height;
   			> a {padding: @navbar-padding-vertical (@navbar-padding-horizontal * 4);}
 
   			&[id*="navbar-"] {
 	  			position: absolute;
-	  			&#navbar-brand {left: 40px; a {color: @gray-darker;}}
-	  			&#navbar-help {right: 125px;}
-	  			&#navbar-choser {right: 90px;}
-	  			&#navbar-userarea {right: 40px;}
+	  			&#navbar-brand {left: 0; a {color: @gray-darker;}}
+	  			&#navbar-help {right: ((@navbar-height / 2) + (@navbar-padding-horizontal * 8));}
+	  			&#navbar-choser {right: ((@navbar-height / 2) + (@navbar-padding-horizontal * 5));}
+	  			&#navbar-userarea {right: 0; .dropdown-menu {margin-right: (@navbar-padding-horizontal * 4);}}
+
+	  			&.dropdown {
+			  		.dropdown-menu {
+			  			&:before {
+			  				content: '';
+			  				position: absolute;
+			  				top: -7px;
+			  				right: 3px;
+			  				.triangle-up(7px, @gray-light);
+			  				.translate(-50%, 0);
+			  			}
+			  			&:after {
+			  				content: '';
+			  				position: absolute;
+			  				top: -6px;
+			  				right: 5px;
+			  				.triangle-up(6px, #fff);
+			  				.translate(-50%, 0);
+			  			}
+			  		}
+			  	}
 	  		}
 
 	  		.avatar {
 	  			display: inline-block;
-	  			padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
+	  			padding: @navbar-padding-vertical (@navbar-padding-horizontal * 4) @navbar-padding-vertical @navbar-padding-horizontal!important;
 	  			img {
 	  				width: (@navbar-height / 2);
 	  				height: auto;
@@ -230,76 +286,24 @@ body.dragover-err {
 	  				margin-top: -5px;
 	  			}
 	  		}
-
-	  		&.dropdown {
-	  			.dropdown-menu {
-	  				&:before {
-	  					content: '';
-	  					position: absolute;
-	  					top: -7px;
-	  					right: 6px;
-	  					.triangle-up(7px, @gray-light);
-	  					.translate(-50%, 0);
-	  				}
-	  				&:after {
-	  					content: '';
-	  					position: absolute;
-	  					top: -6px;
-	  					right: 8px;
-	  					.triangle-up(6px, #fff);
-	  					.translate(-50%, 0);
-	  				}
-	  			}
-	  		}
-
-	  		.navbar-icon {
-	  			display: inline-block;
-	  			padding: @navbar-padding-vertical @navbar-padding-horizontal!important;
-	  			.icon {
-	  				color: @gray;
-	  				font-size: 23px;
-	  				float: left;
-	  				margin-top: -2px;
-	  			}
-
-	  			&:hover, &:focus {text-decoration: none;}
-	  		}
   		}
-
-  		+ .navbar-nav {
-	  		width: 100%;
-
-	  		> li {
-	  			position: relative;
-	  			height: @navbar-height;
-	  			> a {padding: @navbar-padding-vertical (@navbar-padding-horizontal * 3);}
-
-	  			+ li {
-	  				.icon-right-open-big;
-	  				&:before {
-	  					.icon;
-	  					color: @gray;
-	  					position: absolute;
-	  					top: ((@navbar-height / 2) - (@line-height-computed / 3));
-	  					font-size: @font-size-small;
-	  				}
-	  			}
-
-		  		.navbar-divider {
-		  			height: @navbar-height;
-		  			padding: (@navbar-padding-vertical - 2) (@navbar-padding-horizontal / 2);
-
-		  			&:after {
-		  				content: "";
-		  				border-left: 1px solid @gray-light;
-		  				height: 100%;
-		  				display: block;
-		  			}
-		  		}
-	  		}
-	  	}
   	}
-}
+
+
+  	// Breadcrumb navbar specific
+
+  	#navbar-breadcrumb {
+  		> li + li {
+			.icon-right-open-big;
+  			&:before {
+  				.icon;
+  				color: @gray;
+  				position: absolute;
+  				top: ((@navbar-height / 2) - (@line-height-computed / 3));
+  				font-size: @font-size-small;
+  			}
+  		}
+  	}
 
   // Second level menu specific
 
@@ -345,6 +349,7 @@ body.dragover-err {
 
   			> li {
   				width: 100%;
+  				height: auto;
   				float: none;
   				display: inline-block;
   				-webkit-column-break-before: always;
