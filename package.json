@@ -1,7 +1,7 @@
 {
   "name": "bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "3.2.0",
+  "version": "1.0.5fc",
   "keywords": [
     "css",
     "less",
@@ -11,8 +11,8 @@
     "framework",
     "web"
   ],
-  "homepage": "http://getbootstrap.com",
-  "author": "Twitter, Inc.",
+  "homepage": "http://fenixedu.org",
+  "author": "Instituto Superior Técnico",
   "scripts": {
     "test": "grunt test"
   },
@@ -27,7 +27,7 @@
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
+    "url": "https://github.com/FenixEdu/fenixedu-canvas/blob/master/LICENSE"
   },
   "devDependencies": {
     "btoa": "~1.1.2",
